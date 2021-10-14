@@ -1,0 +1,130 @@
+/*
+Exemplo de implementaÃ§Ã£o para guiar o trabalho da M2
+SÃ£o implementados os protÃ³tipos de exemplo de cada funÃ§Ã£o 
+A implementaÃ§Ã£o de cada algoritmo Ã© de resposabilidade de cada grupo/aluno
+SÃ£o usados conceitos bÃ¡sicos de implementaÃ§Ã£o vistos em qualquer disciplina de algoritmos
+A estrutura do cÃ³digo pode ser modificada como for conveniente 
+
+*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//#include <pthread.h> // se for usar threads para implementar 
+
+
+//Define um exemplo de mensagem gerada pela aplicaÃ§Ã£o
+char app_payload[20] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t'};
+
+
+//Estrutura bÃ¡sica para um pacote
+typedef struct{
+    int seqnum;
+    int acknum;
+    char cheksum;
+    char *payload; //pode implementar como "char payload[20]"
+}rtp_packet_t;
+
+/*------------------------------------------------------
+DefiniÃ§Ã£o das funÃ§Ãµes que definem uma camada de aplicaÃ§Ã£o 
+Funciona igual uma API chamada pelo software de aplicaÃ§Ã£o
+*/
+//API para Alice
+void app_layer_A(){
+    //chamar a "API" para realizar o transporte
+}
+//API para Bob
+void app_layer_B(){
+    //Ã© chamado para detectar quando um dado chegou algo
+}
+//------------------------------------------------------
+
+
+/*------------------------------------------------------
+DifiniÃ§Ãµes para a camada de transporte 
+Exemplo simples mas que guia implementaÃ§Ã£o bÃ¡sica em mais baixo nÃ­vel de algo mais real
+*/
+//FunÃ§Ã£o de inicializaÃ§Ã£o para Alice
+//void transport_layer_init(int host){
+void transport_layer_init_A(){
+    //pode usar uma para cada host ou uma unica que pode ser chamada que 
+}
+//FunÃ§Ã£o de inicializaÃ§Ã£o para Bob
+void transport_layer_init_B(){
+    //pode usar uma para cada host ou uma unica que pode ser chamada que 
+}
+//FunÃ§Ã£o de entrada de dados/controle que chegam do meio e sÃ£o usada pelo camada de transporte
+//SÃ£o usadas para dados ou controle - payload ou ACK/NACK
+void transport_layer_input_A(){
+    //pode usar uma para cada host ou uma unica que pode ser chamada que 
+    //FSM
+    enum estado_fsm_t {s1,s2,s3} estados_op;
+    while(1){
+        switch (estado){
+        case s1: //cÃ³digo do estado
+            break;
+        
+        default:
+            break;
+        }
+    }
+}
+//FunÃ§Ã£o de entrada de dados/controle que chegam do meio e sÃ£o usada pelo camada de transporte
+//SÃ£o usadas para dados ou controle - payload ou ACK/NACK
+void transport_layer_input_B()mmm{
+    //pode usar uma para cada host ou uma unica que pode ser chamada 
+    //FSM
+    enum estado_fsm_t {s1,s2,s3} estados_op;
+    while(1){
+        switch (estado){
+        case s1: //cÃ³digo do estado
+            break;
+        
+        default:
+            break;
+        }
+    }
+}
+//FunÃ§Ã£o de saÃ­da de dados/controle que sÃ£o entregues ao meio 
+//SÃ£o usadas para dados ou controle - payload ou ACK/NACK
+void transport_layer_output_A(){
+    //pode usar uma para cada host ou uma unica que pode ser chamada
+    //FSM
+    enum estado_fsm_t {s1,s2,s3} estados_op;
+    while(1){
+        switch (estado){
+        case s1: //cÃ³digo do estado
+            break;
+        
+        default:
+            break;
+        }
+    } 
+}
+
+//FunÃ§Ã£o que calcula o checksum para oferecer proteÃ§Ã£o ao pacote
+char checksum(){
+    //Calcula o checksum
+
+    return checksum;
+}
+//------------------------------------------------------
+
+/*
+FuncÃ£o que define o meio 
+IrÃ¡ implicar em simular a trasferÃªncia entre hosts
+O pacote pode ser entregue normal, atrasado, com erros ou nÃ£o ser entregue
+*/
+void communication_network(){
+    //implementar da maneira que quiser
+}
+
+/*
+FuncÃ£o que inicia tudo
+Chama as outras funÃ§Ãµes e pode ser usada para controlar tudo
+*/
+void main(){
+    //criar variÃ¡veis necessÃ¡rias
+    //chamar as funÃ§Ãµes
+}
